@@ -11,7 +11,7 @@
 
     <script>
         // Use JavaScript or a library to make a GET request to the Spring Boot API
-        fetch('http://localhost:8080/api/data')
+        fetch('http://127.0.0.1:8080/api/data')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('data-container').innerText = data;
