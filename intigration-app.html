@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Boot Front End</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+          }
+      
+          .love-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            border: none;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+          }
+      
+          .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: #ff4081;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          }
+      
+          .heart::before,
+          .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #ff4081;
+            border-radius: 50%;
+          }
+      
+          .heart::before {
+            left: -15px;
+          }
+      
+          .heart::after {
+            left: 15px;
+          }
+      
+          .love-button:hover .heart {
+            animation: beat 0.5s ease infinite;
+          }
+      
+          @keyframes beat {
+            0%, 100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.2);
+            }
+          }
+        </style>
+        <title>Love Button</title>
+      </head>
 <body>
-    <h1>Data from Spring Boot API</h1>
-    <div id="data-container"></div>
-
+    <h1>I Love YOU </h1>
+   <!--<div id="data-container"></div>-->
+    <body>
+        <a href="love.html" class="love-button">
+          <div class="heart"></div>
+          Love
+        </a>
+      </body>
     <script>
         // Use JavaScript or a library to make a GET request to the Spring Boot API
         fetch('http://127.0.0.1:8080/api/data')
