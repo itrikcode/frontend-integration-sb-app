@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot Front End</title>
+</head>
+<body>
+    <h1>Data from Spring Boot API</h1>
+    <div id="data-container"></div>
+
+    <script>
+        // Use JavaScript or a library to make a GET request to the Spring Boot API
+        fetch('http://localhost:8080/api/data')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('data-container').innerText = data;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
